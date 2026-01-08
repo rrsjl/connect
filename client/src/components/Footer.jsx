@@ -12,13 +12,12 @@ function Footer() {
                 <div className="footer-section">
                     <h4>About</h4>
                     <p>
-                        Curating concise React know-how and tasteful UI ideas for builders who want
-                        to ship fast without looking generic.
+                        Helping you discover local events, meet like-minded people, and stay connected to your community effortlessly.
                     </p>
                 </div>
                 <div className="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: cyrusrobles@company.com</p>
+                    <p>Email: rovsajol@company.com</p>
                     <p>Phone: 09**-***-****</p>
                 </div>
                 <div className="footer-section">
@@ -37,7 +36,7 @@ function Footer() {
                 </div>
             </div>
             <div className="footer-bottom">
-                    <p>&copy; {currentYear} Your Company Name. All rights reserved.</p>
+                    <p>&copy; {currentYear} KCX. All rights reserved.</p>
             </div>
         </footer>
     );

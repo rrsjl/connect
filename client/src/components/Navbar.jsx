@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
-import logo from '../assets/react.svg';
+import logo from '../assets/my logo.svg';
 import Button from './Button';
 function Navbar() {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ function Navbar() {
         <nav>
             <div className="logo">
                 <img src={logo} alt="Logo" />
-                <span>Taglay</span>
+                <span>Connect</span>
             </div>
             <ul>
                 <li>
@@ -26,7 +26,9 @@ function Navbar() {
                     <Link to='/articles'>Articles</Link>
                 </li>
             </ul>
-            <Button onClick={handleLoginClick}>Login</Button>
+            <Button className="login-btn" onClick={handleLoginClick}>
+                Login
+            </Button>
         </nav>
     )
 }

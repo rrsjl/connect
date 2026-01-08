@@ -1,53 +1,52 @@
 const articles = [
     {
-        name: "react-props-and-styling", // String
-        title: "Understanding React Props and Styling", //String
-        // List --> String
+        name: "top-local-events",
+        title: "Top 10 Local Events This Month",
         content: [
-            "Props (short for properties) allow you to pass data between components. They are read-only and essential for component reusability.",
-            "Example:\nfunction Welcome(props) {\n  return <h1>Hello, {props.name}!</h1>;\n}",
-            "React supports multiple styling approaches: inline styles, CSS files, CSS Modules, and styled-components.",
-            "Inline Style Example:\nconst style = { color: 'blue' };\n<p style={style}>Styled Text</p>"
+            "Discover the most exciting events happening near you this month.",
+            "From music festivals to community gatherings, there’s something for everyone.",
+            "Plan ahead so you don’t miss out on the fun!",
+            "Check event details, ticket info, and join the experiences that matter."
         ]
     },
     {
-        name: "react-functional-components",
-        title: "React Functional Components",
+        name: "community-workshops",
+        title: "Workshops to Connect Locally",
         content: [
-            "Functional components are simple JavaScript functions that return JSX.",
-            "They are stateless by default but can use hooks like useState and useEffect.",
-            "Example:\nfunction HelloWorld() {\n  return <h1>Hello, World!</h1>;\n}",
-            "They are preferred in modern React apps for simplicity and performance."
+            "Enhance your skills while meeting people in your area.",
+            "These hands-on workshops help you engage with the local community and learn something new.",
+            "Spaces fill quickly, so sign up early to secure your spot.",
+            "From cooking classes to tech workshops, there’s an event for every interest."
         ]
     },
     {
-        name: "react-component-lifecycle",
-        title: "React Component Lifecycle",
+        name: "weekly-networking",
+        title: "Weekly Networking Meetups",
         content: [
-            "Class components have lifecycle methods: mounting, updating, unmounting.",
-            "Key methods include: componentDidMount, componentDidUpdate, componentWillUnmount.",
-            "Functional components use the useEffect hook to mimic lifecycle behavior.",
-            "Example:\nuseEffect(() => {\n  console.log('Mounted');\n  return () => console.log('Unmounted');\n}, []);"
+            "Join local meetups to connect with like-minded individuals.",
+            "Exchange ideas, collaborate on projects, and make lasting connections.",
+            "Whether you’re new in town or looking to expand your network, these meetups are for you.",
+            "Check the schedule and RSVP to upcoming events in your area."
         ]
     },
     {
-        name: "react-routing-basics",
-        title: "React Router Basics",
+        name: "volunteer-opportunities",
+        title: "Volunteer and Make a Difference",
         content: [
-            "React Router allows navigation between pages without a page reload.",
-            "Set up routes using BrowserRouter, Routes, and Route components.",
-            "Example:\n<Routes>\n  <Route path=\"/\" element={<Home />} />\n  <Route path=\"/about\" element={<About />} />\n</Routes>",
-            "Use Link component for navigation:\n<Link to=\"/about\">About</Link>"
+            "Engage with your community by joining volunteer events.",
+            "From environmental cleanups to local charity drives, find ways to give back.",
+            "Meet new people while contributing to meaningful causes.",
+            "Stay involved and help make your community a better place."
         ]
     },
     {
-        name: "react-state-management",
-        title: "Managing State in React",
+        name: "family-friendly-events",
+        title: "Family-Friendly Events",
         content: [
-            "State allows components to keep track of dynamic data.",
-            "useState hook lets functional components manage state.",
-            "Example:\nconst [count, setCount] = useState(0);",
-            "Updating state triggers a re-render with the new value."
+            "Looking for fun activities the whole family can enjoy?",
+            "Check out local fairs, educational events, and outdoor activities suitable for all ages.",
+            "Create lasting memories while exploring your community together.",
+            "Plan your weekends with engaging events everyone will love."
         ]
     }
 ];

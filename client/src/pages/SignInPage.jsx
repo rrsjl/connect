@@ -32,7 +32,7 @@ const SignInPage = () => {
     return (
         <div className="auth-shell">
             <div className="auth-hero">
-                <div className="auth-hero-badge">Taglay</div>
+                <div className="auth-hero-badge">Connect</div>
                 <h1>Welcome back</h1>
                 <p className="muted">Sign in to manage users and articles.</p>
             </div>

@@ -72,3 +72,21 @@ nav ul li a:hover {
     gap: 8px;
   }
 }
+
+.custom-button.login-btn {
+  background: linear-gradient(120deg, #8b5cf6, #7c3aed); 
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.custom-button.login-btn:hover {
+  background: #7c3aed; 
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+}

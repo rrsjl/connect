@@ -21,13 +21,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: #e0f2fe;
-  color: #0284c7;
+  background: linear-gradient(120deg, #e9d5ff, #c4b5fd);
+  color: #4c1d95;
   font-weight: 800;
   letter-spacing: -0.02em;
   width: fit-content;
+
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.25);
 }
 
 .auth-card {

@@ -1,67 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { fetchArticleByName } from '../../services/ArticleService';
-import NotFoundPage from '../NotFoundPage.jsx';
+import articles from '../../article-content';
+import NotFoundPage from '../NotFoundPage';
 
 function ArticlePage() {
   const { name } = useParams();
-  const [article, setArticle] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
 
-  useEffect(() => {
-    const loadArticle = async () => {
-      try {
-        setIsLoading(true);
-        setError('');
-        const { data } = await fetchArticleByName(name);
-        const fetchedArticle = data?.article;
-        if (fetchedArticle && fetchedArticle.isActive !== false) {
-          setArticle(fetchedArticle);
-        } else {
-          setArticle(null);
-        }
-      } catch (err) {
-        if (err?.response?.status === 404) {
-          setArticle(null);
-        } else {
-          console.error('Error loading article', err);
-          setError('Unable to load this article right now.');
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  // Find the article from local data
+  const article = articles.find((a) => a.name === name);
 
-    loadArticle();
-  }, [name]);
+  if (!article) return <NotFoundPage />;
 
-  if (isLoading) {
-    return (
-      <div className="page">
-        <p className="muted">Loading article...</p>
-      </div>
-    );
-  }
+  const contentArray = Array.isArray(article.content) ? article.content : [article.content];
 
-  if (error) {
-    return (
-      <div className="page">
-        <p className="muted">{error}</p>
-      </div>
-    );
-  }
-
-  if (!article) {
-    return <NotFoundPage />;
-  }
-
-  const contentArray = Array.isArray(article.content)
-    ? article.content
-    : article.content
-      ? [article.content]
-      : [];
-
+  // Estimate reading time
   const words = contentArray.join(' ').split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(2, Math.ceil(words / 70));
 
@@ -74,21 +26,18 @@ function ArticlePage() {
           <span className="pill">React</span>
           <span className="muted">{minutes} min read</span>
         </div>
-        <p className="lead">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus egestas blandit
-          fringilla platea quam vel.
-        </p>
+        <p className="lead">{contentArray[0]}</p> {/* First paragraph as lead */}
       </div>
 
       <div className="article-body">
-        {contentArray.map((paragraph, idx) => (
+        {contentArray.slice(1).map((paragraph, idx) => (
           <p key={`${article.name}-${idx}`}>{paragraph}</p>
         ))}
+
         <div className="card callout">
           <h3>Want another angle?</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit amet nisl eu condimentum
-            tincidunt pulvinar sed commodo.
+            Check out more articles to discover exciting events and community activities near you.
           </p>
           <Link to="/articles" className="button-link primary">
             Browse more articles

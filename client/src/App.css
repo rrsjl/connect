@@ -165,16 +165,33 @@
 .cta-banner {
   padding: 20px;
   border-radius: var(--radius);
-  background: linear-gradient(120deg, #0ea5e9, #0284c7);
+  background: linear-gradient(120deg, #d8b4fe, #4828a8); 
   color: #ffffff;
   display: grid;
   gap: 8px;
-  box-shadow: 0 18px 40px rgba(14, 165, 233, 0.25);
+  box-shadow: 0 18px 40px rgba(48, 6, 175, 0.25); 
 }
 
+.cta-banner h3,
 .cta-banner p {
-  color: #e2f3ff;
+  color: #000000; 
 }
+
+.cta-banner .button-link.primary {
+  background: #755fb6; 
+  color: #070707;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cta-banner .button-link.primary:hover {
+  background: #5025b3; 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+}
+
 
 .about-grid {
   display: grid;
@@ -222,3 +239,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+.pill {
+  background: linear-gradient(120deg, #9b7fd6, #6b5b95);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
