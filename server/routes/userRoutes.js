@@ -1,21 +1,24 @@
 const express = require('express');
-// import functions
-const { getUsers, createUser, updateUser, deleteUser, loginUser, } = require('../controllers/userController');
+const {
+  getUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+  loginUser
+} = require('../controllers/userController');
 
 const router = express.Router();
 
-// Route composition 
-// (route name, route function[controller])
+// User routes
+router.route('/')
+  .get(getUsers)        // Get all users
+  .post(createUser);    // Create new user
 
-// Single
-// router.get('/', getUsers);
+router.route('/:id')
+  .put(updateUser)      // Update user
+  .delete(deleteUser);  // Delete user
 
-// Combination  
-router.route('/').get(getUsers).post(createUser);
-
-router.route('/:id').put(updateUser).delete(deleteUser);
-
-// Add login route
+// Login route
 router.post('/login', loginUser);
 
 module.exports = router;
